@@ -1,0 +1,6 @@
+# settings: ObjectDict([('device', 'cpu'), ('num_threads', 1), ('lr', 0.001), ('batch_size', 32), ('n_lstm', 16), ('n_updates', 50000.0), ('results_dir', 'results'), ('print_stats_at', 10.0), ('plot_at', 10000.0), ('validate_at', 50.0), ('n_samples', 100000.0), ('rnd_seed', 123)])
+[train] u: 0000010; loss: 4.1572163; sec/update: 1.1618039;lr: 0.0009998
+[train] u: 0000020; loss: 4.2161227; sec/update: 1.1950242;lr: 0.0009996
+[train] u: 0000030; loss: 2.5503732; sec/update: 0.7639881;lr: 0.0009994
+[train] u: 0000040; loss: 3.0118453; sec/update: 0.9388441;lr: 0.0009992
+[train] u: 0000050; loss: 4.6819331; sec/update: 1.2502655;lr: 0.0009990

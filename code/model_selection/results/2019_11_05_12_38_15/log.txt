@@ -1,0 +1,20 @@
+# settings: ObjectDict([('device', 'cpu'), ('num_threads', 4), ('lr', 0.001), ('batch_size', 128), ('n_lstm', 16), ('n_updates', 50000.0), ('results_dir', 'results'), ('print_stats_at', 10.0), ('plot_at', 10000.0), ('validate_at', 50.0), ('n_samples', 100000.0), ('rnd_seed', 123)])
+[train] u: 0000010; loss: 4.9048095; sec/update: 4.8221331;lr: 0.0009998
+[train] u: 0000020; loss: 6.6138483; sec/update: 3.5968744;lr: 0.0009996
+[train] u: 0000030; loss: 5.6207417; sec/update: 1.6489958;lr: 0.0009994
+[train] u: 0000040; loss: 5.2963645; sec/update: 2.4466879;lr: 0.0009992
+[train] u: 0000050; loss: 3.8740620; sec/update: 2.4450388;lr: 0.0009990
+[validation] u: 0000050; loss: 3.8027961; baccs: [0.4992248  0.47718808 0.69790053 ...        nan        nan        nan]; validation_aucs:[0.65194283 0.63187189 0.54033692 ... 0.61162166 0.58270433 0.60191007]; bacc:   nan; validation_auc:0.5453
+  New best validation loss: 3.8027961254119873
+[train] u: 0000060; loss: 3.8273236; sec/update: 5.8276824;lr: 0.0009988
+[train] u: 0000070; loss: 3.2591825; sec/update: 1.7774407;lr: 0.0009986
+[train] u: 0000080; loss: 1.6297464; sec/update: 2.5005787;lr: 0.0009984
+[train] u: 0000090; loss: 2.5221003; sec/update: 1.8696021;lr: 0.0009982
+[train] u: 0000100; loss: 1.9750054; sec/update: 2.1361793;lr: 0.0009980
+[validation] u: 0000100; loss: 1.6637596; baccs: [0.5        0.49844816 0.49937946 ...        nan        nan        nan]; validation_aucs:[0.62295003 0.43787313 0.67318021 ... 0.57918846 0.633125   0.53866882]; bacc:   nan; validation_auc:0.5926
+  New best validation loss: 1.6637595891952515
+[train] u: 0000110; loss: 1.4881632; sec/update: 4.9003057;lr: 0.0009978
+[train] u: 0000120; loss: 1.0703685; sec/update: 2.5110601;lr: 0.0009976
+[train] u: 0000130; loss: 0.8732849; sec/update: 2.1361815;lr: 0.0009974
+[train] u: 0000140; loss: 0.6536395; sec/update: 1.8179204;lr: 0.0009972
+[train] u: 0000150; loss: 0.4736189; sec/update: 1.8005359;lr: 0.0009970

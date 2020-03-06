@@ -1,0 +1,116 @@
+# settings: ObjectDict([('device', 'cpu'), ('num_threads', 4), ('lr', 0.01), ('batch_size', 64), ('n_lstm', 4), ('n_updates', 1000.0), ('results_dir', 'results'), ('print_stats_at', 10.0), ('plot_at', 100.0), ('validate_at', 20.0), ('n_samples', 100000.0), ('rnd_seed', 42)])
+[train] u: 0000010; loss: 10.8421679; sec/update: 1.0627880;lr: 0.0099101
+[train] u: 0000020; loss: 1.0295705; sec/update: 0.7815527;lr: 0.0098102
+[validation] u: 0000020; loss: 0.6681229; baccs: [0.5        0.5        0.49875852 ... 0.4996884  0.49875623 0.49875852]; validation_aucs:[0.47898168 0.62424    0.69273743 ... 0.51245578 0.47814055 0.53972688]; bacc: 0.5011; validation_auc:0.4861
+  New best validation loss: 0.6681229472160339
+[train] u: 0000030; loss: 0.5934879; sec/update: 2.4614500;lr: 0.0097103
+[train] u: 0000040; loss: 0.3529503; sec/update: 0.7842513;lr: 0.0096104
+[validation] u: 0000040; loss: 0.2918646; baccs: [0.5        0.5        0.49860334 ... 0.49953255 0.49875623 0.49860334]; validation_aucs:[0.50263893 0.59246439 0.61887027 ... 0.50209888 0.52646144 0.54461515]; bacc: 0.5003; validation_auc:0.4742
+  New best validation loss: 0.2918645739555359
+[train] u: 0000050; loss: 0.2284585; sec/update: 2.2669389;lr: 0.0095105
+[train] u: 0000060; loss: 0.2261841; sec/update: 11.6788268;lr: 0.0094106
+[validation] u: 0000060; loss: 0.2249417; baccs: [0.5        0.5        0.49953446 ... 0.4996884  0.4995336  0.49953446]; validation_aucs:[0.49972058 0.60471309 0.72222222 ... 0.50611332 0.62608831 0.51606145]; bacc: 0.5002; validation_auc:0.4648
+  New best validation loss: 0.22494173049926758
+[train] u: 0000070; loss: 0.1796876; sec/update: 5.8235914;lr: 0.0093107
+[train] u: 0000080; loss: 0.1490388; sec/update: 1.7664887;lr: 0.0092108
+[validation] u: 0000080; loss: 0.1558412; baccs: [0.5        0.5        0.49953446 ... 0.4996884  0.4995336  0.4992241 ]; validation_aucs:[0.48481838 0.64034971 0.79383923 ... 0.51236412 0.64455846 0.47982619]; bacc: 0.5000; validation_auc:0.4588
+  New best validation loss: 0.1558411717414856
+[train] u: 0000090; loss: 1.0083623; sec/update: 36.3030200;lr: 0.0091109
+[train] u: 0000100; loss: 1.7226467; sec/update: 2.1442527;lr: 0.0090110
+[validation] u: 0000100; loss: 1.9634727; baccs: [0.5        0.5        0.37895718 ... 0.44281706 0.47574627 0.5335971 ]; validation_aucs:[0.49965849 0.64864865 0.23153321 ... 0.46085458 0.45783582 0.50100869]; bacc: 0.5043; validation_auc:0.4709
+[train] u: 0000110; loss: 1.6877737; sec/update: 39.2980705;lr: 0.0089111
+[train] u: 0000120; loss: 0.8820993; sec/update: 2.5146533;lr: 0.0088112
+[validation] u: 0000120; loss: 0.5055936; baccs: [0.5        0.5        0.5        ... 0.5        0.5        0.43435755]; validation_aucs:[0.48885439 0.66200683 0.80128802 ... 0.53283962 0.65886194 0.29725326]; bacc: 0.5008; validation_auc:0.4632
+[train] u: 0000130; loss: 0.4447051; sec/update: 124.4237810;lr: 0.0087113
+[train] u: 0000140; loss: 0.1976179; sec/update: 0.7827778;lr: 0.0086114
+[validation] u: 0000140; loss: 0.1745573; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.49202111 0.65850087 0.81781502 ... 0.50418859 0.62552861 0.3943203 ]; bacc: 0.5007; validation_auc:0.4612
+[train] u: 0000150; loss: 0.1552977; sec/update: 13.1419203;lr: 0.0085115
+[train] u: 0000160; loss: 0.0901788; sec/update: 0.9880136;lr: 0.0084116
+[validation] u: 0000160; loss: 0.1282262; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.49996895 0.66582346 0.82231533 ... 0.50998112 0.60522388 0.45445376]; bacc: 0.5001; validation_auc:0.4600
+  New best validation loss: 0.1282261610031128
+[train] u: 0000170; loss: 0.1162114; sec/update: 2.5530433;lr: 0.0083117
+[train] u: 0000180; loss: 0.1243584; sec/update: 1.0933825;lr: 0.0082118
+[validation] u: 0000180; loss: 0.1179082; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.49903757 0.67487685 0.82673805 ... 0.51650688 0.55597015 0.47020484]; bacc: 0.5001; validation_auc:0.4616
+  New best validation loss: 0.11790815740823746
+[train] u: 0000190; loss: 0.1218814; sec/update: 2.4118402;lr: 0.0081119
+[train] u: 0000200; loss: 0.1148690; sec/update: 0.8320134;lr: 0.0080120
+[validation] u: 0000200; loss: 0.1106511; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.49071717 0.67296854 0.82898821 ... 0.52809195 0.53488806 0.51132837]; bacc: 0.5000; validation_auc:0.4643
+  New best validation loss: 0.11065112054347992
+[train] u: 0000210; loss: 0.1263438; sec/update: 2.7761002;lr: 0.0079121
+[train] u: 0000220; loss: 0.1021657; sec/update: 0.8341412;lr: 0.0078122
+[validation] u: 0000220; loss: 0.1054603; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.46619062 0.66719922 0.82883302 ... 0.55049218 0.54704602 0.5744879 ]; bacc: 0.5001; validation_auc:0.4669
+  New best validation loss: 0.10546029359102249
+[train] u: 0000230; loss: 0.1050229; sec/update: 2.5622306;lr: 0.0077123
+[train] u: 0000240; loss: 0.1026548; sec/update: 0.8759399;lr: 0.0076124
+[validation] u: 0000240; loss: 0.1010754; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.480534   0.66622287 0.82635009 ... 0.55819112 0.54508706 0.60280881]; bacc: 0.5000; validation_auc:0.4689
+  New best validation loss: 0.1010754257440567
+[train] u: 0000250; loss: 0.0921712; sec/update: 2.4967571;lr: 0.0075125
+[train] u: 0000260; loss: 0.1012414; sec/update: 1.4571285;lr: 0.0074126
+[validation] u: 0000260; loss: 0.0967204; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.49369761 0.66356011 0.81998759 ... 0.56011585 0.54309701 0.62616387]; bacc: 0.5000; validation_auc:0.4711
+  New best validation loss: 0.09672042727470398
+[train] u: 0000270; loss: 0.0979503; sec/update: 2.9284186;lr: 0.0073127
+[train] u: 0000280; loss: 0.0903346; sec/update: 0.9818627;lr: 0.0072128
+[validation] u: 0000280; loss: 0.0929748; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.49568457 0.65903342 0.7950807  ... 0.56625667 0.54359453 0.62678461]; bacc: 0.5001; validation_auc:0.4740
+  New best validation loss: 0.09297475218772888
+[train] u: 0000290; loss: 0.0943599; sec/update: 2.3019577;lr: 0.0071129
+[train] u: 0000300; loss: 0.1540453; sec/update: 1.9561015;lr: 0.0070130
+[validation] u: 0000300; loss: 0.0883308; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.54063955 0.65299783 0.66977033 ... 0.58014225 0.54197761 0.60350714]; bacc: 0.5001; validation_auc:0.4775
+  New best validation loss: 0.08833076804876328
+[train] u: 0000310; loss: 0.0530425; sec/update: 0.6116255;lr: 0.0069131
+[train] u: 0000320; loss: 0.0924495; sec/update: 1.0711029;lr: 0.0068132
+[validation] u: 0000320; loss: 0.0845896; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.57031978 0.63577864 0.51606145 ... 0.57859329 0.53949005 0.58620422]; bacc: 0.5000; validation_auc:0.4818
+  New best validation loss: 0.0845896378159523
+[train] u: 0000330; loss: 0.0826700; sec/update: 2.5763157;lr: 0.0067133
+[train] u: 0000340; loss: 0.0736327; sec/update: 0.7336811;lr: 0.0066134
+[validation] u: 0000340; loss: 0.0785969; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.57919901 0.58247903 0.47936065 ... 0.57652191 0.53513682 0.57409994]; bacc: 0.5001; validation_auc:0.4840
+  New best validation loss: 0.07859685271978378
+[train] u: 0000350; loss: 0.0783683; sec/update: 2.6942380;lr: 0.0065135
+[train] u: 0000360; loss: 0.0710430; sec/update: 0.8823490;lr: 0.0064136
+[validation] u: 0000360; loss: 0.0723675; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.58224154 0.38326011 0.45181564 ... 0.57600865 0.5284204  0.56346989]; bacc: 0.5000; validation_auc:0.4855
+  New best validation loss: 0.07236748933792114
+[train] u: 0000370; loss: 0.1159137; sec/update: 3.6976394;lr: 0.0063137
+[train] u: 0000380; loss: 0.0842947; sec/update: 0.9322513;lr: 0.0062138
+[validation] u: 0000380; loss: 0.0701879; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.58776777 0.37633693 0.45949721 ... 0.57027111 0.52468905 0.51955307]; bacc: 0.5001; validation_auc:0.4858
+  New best validation loss: 0.07018789649009705
+[train] u: 0000390; loss: 0.0776092; sec/update: 2.3560629;lr: 0.0061139
+[train] u: 0000400; loss: 0.0635237; sec/update: 1.2305897;lr: 0.0060140
+[validation] u: 0000400; loss: 0.0656320; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.5875815  0.38849687 0.5027933  ... 0.55729291 0.52164179 0.49030106]; bacc: 0.5000; validation_auc:0.4831
+  New best validation loss: 0.06563203036785126
+[train] u: 0000410; loss: 0.0671552; sec/update: 2.4584614;lr: 0.0059141
+[train] u: 0000420; loss: 0.0565971; sec/update: 0.9209913;lr: 0.0058142
+[validation] u: 0000420; loss: 0.0635322; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.58317293 0.42182577 0.54973619 ... 0.56764981 0.52049129 0.48510242]; bacc: 0.5000; validation_auc:0.4811
+  New best validation loss: 0.06353215873241425
+[train] u: 0000430; loss: 0.0644704; sec/update: 2.1900330;lr: 0.0057143
+[train] u: 0000440; loss: 0.0614199; sec/update: 1.4260200;lr: 0.0056144
+[validation] u: 0000440; loss: 0.0617299; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.59037566 0.45009542 0.59512725 ... 0.56345206 0.51868781 0.46004035]; bacc: 0.5001; validation_auc:0.4798
+  New best validation loss: 0.061729881912469864
+[train] u: 0000450; loss: 0.0534286; sec/update: 2.4194388;lr: 0.0055145
+[train] u: 0000460; loss: 0.0216754; sec/update: 0.4988380;lr: 0.0054146
+[validation] u: 0000460; loss: 0.0605885; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.60065197 0.48422314 0.62662942 ... 0.56198559 0.52472015 0.43497827]; bacc: 0.5001; validation_auc:0.4784
+  New best validation loss: 0.060588520020246506
+[train] u: 0000470; loss: 0.0617137; sec/update: 2.6398026;lr: 0.0053147
+[train] u: 0000480; loss: 0.0597500; sec/update: 1.2669379;lr: 0.0052148
+[validation] u: 0000480; loss: 0.0592704; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.60776156 0.51781831 0.66379578 ... 0.57071105 0.53053483 0.41317505]; bacc: 0.5000; validation_auc:0.4769
+  New best validation loss: 0.05927043408155441
+[train] u: 0000490; loss: 0.0527343; sec/update: 2.9673351;lr: 0.0051149
+[train] u: 0000500; loss: 0.0528311; sec/update: 1.3405537;lr: 0.0050150
+[validation] u: 0000500; loss: 0.0585634; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.60540205 0.46908978 0.68823712 ... 0.59125988 0.54427861 0.39719119]; bacc: 0.5000; validation_auc:0.4761
+  New best validation loss: 0.05856337770819664
+[train] u: 0000510; loss: 0.0578853; sec/update: 2.8799196;lr: 0.0049151
+[train] u: 0000520; loss: 0.0530971; sec/update: 0.7913504;lr: 0.0048152
+[validation] u: 0000520; loss: 0.0577261; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.60043465 0.45453335 0.70297952 ... 0.58554067 0.55583022 0.38811297]; bacc: 0.5002; validation_auc:0.4759
+  New best validation loss: 0.05772610753774643
+[train] u: 0000530; loss: 0.0574799; sec/update: 2.6205507;lr: 0.0047153
+[train] u: 0000540; loss: 0.0591823; sec/update: 1.8080946;lr: 0.0046154
+[validation] u: 0000540; loss: 0.0568236; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.59577771 0.45759553 0.71073867 ... 0.58700713 0.55904851 0.38337989]; bacc: 0.5000; validation_auc:0.4747
+  New best validation loss: 0.05682356655597687
+[train] u: 0000550; loss: 0.0506813; sec/update: 2.7695959;lr: 0.0045155
+[train] u: 0000560; loss: 0.0595563; sec/update: 1.2521945;lr: 0.0044156
+[validation] u: 0000560; loss: 0.0571818; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.58963055 0.47028802 0.72718808 ... 0.57721848 0.56402363 0.37787089]; bacc: 0.5002; validation_auc:0.4742
+[train] u: 0000570; loss: 0.0581503; sec/update: 2.4263798;lr: 0.0043157
+[train] u: 0000580; loss: 0.0527250; sec/update: 1.1609740;lr: 0.0042158
+[validation] u: 0000580; loss: 0.0564887; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.58453896 0.49447477 0.7316108  ... 0.57703518 0.56352612 0.37453445]; bacc: 0.5000; validation_auc:0.4731
+  New best validation loss: 0.05648868530988693
+[train] u: 0000590; loss: 0.0848811; sec/update: 3.7336782;lr: 0.0041159
+[train] u: 0000600; loss: 0.0614798; sec/update: 1.1079463;lr: 0.0040160
+[validation] u: 0000600; loss: 0.0587647; baccs: [0.5 0.5 0.5 ... 0.5 0.5 0.5]; validation_aucs:[0.58050295 0.49345405 0.73463687 ... 0.57553205 0.56293532 0.37057728]; bacc: 0.5002; validation_auc:0.4739

@@ -1,0 +1,25 @@
+# settings: ObjectDict([('device', 'cpu'), ('num_threads', 4), ('lr', 0.01), ('batch_size', 64), ('n_lstm', 8), ('n_updates', 1000.0), ('results_dir', 'results'), ('print_stats_at', 10.0), ('plot_at', 100.0), ('validate_at', 20.0), ('n_samples', 100000.0), ('rnd_seed', 42)])
+[train] u: 0000010; loss: 1.9057152; sec/update: 1.3053396;lr: 0.0099101
+[train] u: 0000020; loss: 1.0186522; sec/update: 1.3072840;lr: 0.0098102
+[validation] u: 0000020; loss: 0.4871192; baccs: [0.5        0.49723756 0.42631578]; validation_aucs:[0.48980496 0.49432975 0.51526316]; bacc: 0.4745; validation_auc:0.4998
+  New best validation loss: 0.487119197845459
+[train] u: 0000030; loss: 0.3610780; sec/update: 1.1086982;lr: 0.0097103
+[train] u: 0000040; loss: 0.3327742; sec/update: 1.1755302;lr: 0.0096104
+[validation] u: 0000040; loss: 0.3137082; baccs: [0.5        0.49447513 0.5       ]; validation_aucs:[0.44193262 0.47397499 0.44263158]; bacc: 0.4982; validation_auc:0.4528
+  New best validation loss: 0.3137081563472748
+[train] u: 0000050; loss: 0.3203889; sec/update: 1.2986588;lr: 0.0095105
+[train] u: 0000060; loss: 0.3302337; sec/update: 1.1701644;lr: 0.0094106
+[validation] u: 0000060; loss: 0.3019224; baccs: [0.5        0.49447513 0.5       ]; validation_aucs:[0.50753546 0.42774062 0.44052632]; bacc: 0.4982; validation_auc:0.4586
+  New best validation loss: 0.30192244052886963
+[train] u: 0000070; loss: 0.3000017; sec/update: 1.2288357;lr: 0.0093107
+[train] u: 0000080; loss: 0.3223749; sec/update: 1.2513499;lr: 0.0092108
+[validation] u: 0000080; loss: 0.2860914; baccs: [0.5 0.5 0.5]; validation_aucs:[0.42420213 0.40825821 0.46789474]; bacc: 0.5000; validation_auc:0.4335
+  New best validation loss: 0.2860914468765259
+[train] u: 0000090; loss: 0.2990258; sec/update: 1.1903499;lr: 0.0091109
+[train] u: 0000100; loss: 0.2784558; sec/update: 1.3005237;lr: 0.0090110
+[validation] u: 0000100; loss: 0.2820270; baccs: [0.5 0.5 0.5]; validation_aucs:[0.51507092 0.41465542 0.51894737]; bacc: 0.5000; validation_auc:0.4829
+  New best validation loss: 0.2820269763469696
+[train] u: 0000110; loss: 0.2730068; sec/update: 1.5678974;lr: 0.0089111
+[train] u: 0000120; loss: 0.2815133; sec/update: 1.1009980;lr: 0.0088112
+[validation] u: 0000120; loss: 0.2787215; baccs: [0.5 0.5 0.5]; validation_aucs:[0.56205674 0.40244257 0.52421053]; bacc: 0.5000; validation_auc:0.4962
+  New best validation loss: 0.27872151136398315

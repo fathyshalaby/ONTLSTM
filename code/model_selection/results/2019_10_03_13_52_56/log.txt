@@ -1,0 +1,137 @@
+# settings: ObjectDict([('device', 'cpu'), ('num_threads', 1), ('lr', 0.01), ('batch_size', 8), ('n_lstm', 16), ('n_updates', 50000.0), ('results_dir', 'results'), ('print_stats_at', 10.0), ('plot_at', 10000.0), ('validate_at', 50.0), ('n_samples', 100000.0), ('rnd_seed', 123)])
+[train] u: 0000010; loss: 3.1404559; sec/update: 0.5089365;lr: 0.0099982
+[train] u: 0000020; loss: 0.4057894; sec/update: 0.4438604;lr: 0.0099962
+[train] u: 0000030; loss: 0.2366982; sec/update: 0.4162995;lr: 0.0099942
+[train] u: 0000040; loss: 0.2876350; sec/update: 0.4853699;lr: 0.0099922
+[train] u: 0000050; loss: 0.1991631; sec/update: 0.3151922;lr: 0.0099902
+[validation] u: 0000050; loss: 0.2337941; bacc: -20637.3379
+  New best validation loss: 0.23379409313201904
+[train] u: 0000060; loss: 0.1805016; sec/update: 3.6736515;lr: 0.0099882
+[train] u: 0000070; loss: 0.2047444; sec/update: 0.5376531;lr: 0.0099862
+[train] u: 0000080; loss: 0.2168891; sec/update: 0.6764916;lr: 0.0099842
+[train] u: 0000090; loss: 0.6765520; sec/update: 1.9314284;lr: 0.0099822
+[train] u: 0000100; loss: 0.2387418; sec/update: 0.6792825;lr: 0.0099802
+[validation] u: 0000100; loss: 0.1522995; bacc: -18691.8340
+  New best validation loss: 0.15229950845241547
+[train] u: 0000110; loss: 0.1505865; sec/update: 3.6625353;lr: 0.0099782
+[train] u: 0000120; loss: 0.1982301; sec/update: 0.5753472;lr: 0.0099762
+[train] u: 0000130; loss: 0.1363812; sec/update: 0.5069685;lr: 0.0099742
+[train] u: 0000140; loss: 0.1532649; sec/update: 0.4839453;lr: 0.0099722
+[train] u: 0000150; loss: 0.1503179; sec/update: 0.5450459;lr: 0.0099702
+[validation] u: 0000150; loss: 0.1231121; bacc: -16995.7773
+  New best validation loss: 0.12311206012964249
+[train] u: 0000160; loss: 0.0773362; sec/update: 3.8227766;lr: 0.0099682
+[train] u: 0000170; loss: 0.0809854; sec/update: 0.2962438;lr: 0.0099662
+[train] u: 0000180; loss: 0.0839387; sec/update: 0.5469572;lr: 0.0099642
+[train] u: 0000190; loss: 0.1395784; sec/update: 0.4184832;lr: 0.0099622
+[train] u: 0000200; loss: 0.0722036; sec/update: 0.3788923;lr: 0.0099602
+[validation] u: 0000200; loss: 0.1024597; bacc: -16311.3945
+  New best validation loss: 0.10245969891548157
+[train] u: 0000210; loss: 0.1012087; sec/update: 3.3640449;lr: 0.0099582
+[train] u: 0000220; loss: 0.1051082; sec/update: 0.4312963;lr: 0.0099562
+[train] u: 0000230; loss: 0.0730872; sec/update: 0.3268739;lr: 0.0099542
+[train] u: 0000240; loss: 0.1253470; sec/update: 0.4055784;lr: 0.0099522
+[train] u: 0000250; loss: 0.0936662; sec/update: 0.5641998;lr: 0.0099502
+[validation] u: 0000250; loss: 0.0949470; bacc: -15237.0361
+  New best validation loss: 0.094946950674057
+[train] u: 0000260; loss: 0.0626183; sec/update: 3.2828762;lr: 0.0099483
+[train] u: 0000270; loss: 0.1881485; sec/update: 0.5979065;lr: 0.0099463
+[train] u: 0000280; loss: 0.1583316; sec/update: 0.5209039;lr: 0.0099443
+[train] u: 0000290; loss: 0.0686625; sec/update: 0.4916454;lr: 0.0099423
+[train] u: 0000300; loss: 0.0572152; sec/update: 0.3874477;lr: 0.0099403
+[validation] u: 0000300; loss: 0.0940361; bacc: -14552.0801
+  New best validation loss: 0.09403610974550247
+[train] u: 0000310; loss: 0.0896448; sec/update: 3.4087380;lr: 0.0099383
+[train] u: 0000320; loss: 0.1529819; sec/update: 0.6361562;lr: 0.0099363
+[train] u: 0000330; loss: 0.0692671; sec/update: 0.3526264;lr: 0.0099343
+[train] u: 0000340; loss: 0.0910912; sec/update: 0.3576505;lr: 0.0099323
+[train] u: 0000350; loss: 0.0544471; sec/update: 0.3892501;lr: 0.0099303
+[validation] u: 0000350; loss: 0.0836176; bacc: -13508.7314
+  New best validation loss: 0.08361763507127762
+[train] u: 0000360; loss: 0.0719572; sec/update: 3.3086723;lr: 0.0099283
+[train] u: 0000370; loss: 0.0458659; sec/update: 0.3958046;lr: 0.0099263
+[train] u: 0000380; loss: 0.1183209; sec/update: 0.6594996;lr: 0.0099243
+[train] u: 0000390; loss: 0.0725896; sec/update: 0.7424054;lr: 0.0099223
+[train] u: 0000400; loss: 0.0580942; sec/update: 0.5582495;lr: 0.0099203
+[validation] u: 0000400; loss: 0.0785031; bacc: -12691.4238
+  New best validation loss: 0.07850313931703568
+[train] u: 0000410; loss: 0.0635131; sec/update: 3.8097520;lr: 0.0099183
+[train] u: 0000420; loss: 0.1028860; sec/update: 0.6425336;lr: 0.0099163
+[train] u: 0000430; loss: 0.1383951; sec/update: 0.6501386;lr: 0.0099143
+[train] u: 0000440; loss: 0.0598340; sec/update: 0.3742985;lr: 0.0099123
+[train] u: 0000450; loss: 0.0756834; sec/update: 0.4087480;lr: 0.0099103
+[validation] u: 0000450; loss: 0.0759115; bacc: -12052.2354
+  New best validation loss: 0.07591154426336288
+[train] u: 0000460; loss: 0.1653341; sec/update: 3.7777531;lr: 0.0099083
+[train] u: 0000470; loss: 0.0655937; sec/update: 0.4269903;lr: 0.0099063
+[train] u: 0000480; loss: 0.0675546; sec/update: 0.4697976;lr: 0.0099043
+[train] u: 0000490; loss: 0.0655176; sec/update: 0.5574774;lr: 0.0099023
+[train] u: 0000500; loss: 0.0763775; sec/update: 0.4642138;lr: 0.0099003
+[validation] u: 0000500; loss: 0.0807581; bacc: -11395.9492
+[train] u: 0000510; loss: 0.1038938; sec/update: 3.4959100;lr: 0.0098983
+[train] u: 0000520; loss: 0.0693420; sec/update: 0.4870148;lr: 0.0098963
+[train] u: 0000530; loss: 0.1706202; sec/update: 0.3936626;lr: 0.0098943
+[train] u: 0000540; loss: 0.0450234; sec/update: 0.3654588;lr: 0.0098923
+[train] u: 0000550; loss: 0.0887233; sec/update: 0.5218927;lr: 0.0098903
+[validation] u: 0000550; loss: 0.0877678; bacc: -11532.9971
+[train] u: 0000560; loss: 0.0919525; sec/update: 3.8864365;lr: 0.0098883
+[train] u: 0000570; loss: 0.1042884; sec/update: 0.5161448;lr: 0.0098863
+[train] u: 0000580; loss: 0.0675172; sec/update: 0.5030309;lr: 0.0098843
+[train] u: 0000590; loss: 0.0928902; sec/update: 0.6098603;lr: 0.0098823
+[train] u: 0000600; loss: 0.0550734; sec/update: 0.4028370;lr: 0.0098803
+[validation] u: 0000600; loss: 0.0744946; bacc: -11265.9287
+  New best validation loss: 0.07449464499950409
+[train] u: 0000610; loss: 0.0459515; sec/update: 3.4893053;lr: 0.0098783
+[train] u: 0000620; loss: 0.0677660; sec/update: 0.4055363;lr: 0.0098763
+[train] u: 0000630; loss: 0.0749409; sec/update: 0.4182009;lr: 0.0098743
+[train] u: 0000640; loss: 0.0646695; sec/update: 0.4479156;lr: 0.0098723
+[train] u: 0000650; loss: 0.0833105; sec/update: 0.5120887;lr: 0.0098703
+[validation] u: 0000650; loss: 0.0745877; bacc: -11251.9902
+[train] u: 0000660; loss: 0.0505098; sec/update: 3.8084195;lr: 0.0098683
+[train] u: 0000670; loss: 0.0686429; sec/update: 0.4859398;lr: 0.0098663
+[train] u: 0000680; loss: 0.0622383; sec/update: 0.4194888;lr: 0.0098643
+[train] u: 0000690; loss: 0.0611651; sec/update: 0.4722188;lr: 0.0098623
+[train] u: 0000700; loss: 0.0573614; sec/update: 0.5565014;lr: 0.0098603
+[validation] u: 0000700; loss: 0.0687808; bacc: -11447.2656
+  New best validation loss: 0.06878075748682022
+[train] u: 0000710; loss: 0.0854657; sec/update: 4.2479715;lr: 0.0098583
+[train] u: 0000720; loss: 0.0715383; sec/update: 0.4294851;lr: 0.0098563
+[train] u: 0000730; loss: 0.0865556; sec/update: 0.4572508;lr: 0.0098543
+[train] u: 0000740; loss: 0.0612675; sec/update: 0.4649487;lr: 0.0098523
+[train] u: 0000750; loss: 0.0904573; sec/update: 0.6325376;lr: 0.0098503
+[validation] u: 0000750; loss: 0.0698972; bacc: -11245.8281
+[train] u: 0000760; loss: 0.0642825; sec/update: 4.6910118;lr: 0.0098484
+[train] u: 0000770; loss: 0.0870598; sec/update: 0.6469450;lr: 0.0098464
+[train] u: 0000780; loss: 0.0546515; sec/update: 0.4502540;lr: 0.0098444
+[train] u: 0000790; loss: 0.0830917; sec/update: 0.4805455;lr: 0.0098424
+[train] u: 0000800; loss: 0.1144151; sec/update: 0.4982505;lr: 0.0098404
+[validation] u: 0000800; loss: 0.0716611; bacc: -11058.7275
+[train] u: 0000810; loss: 0.0738554; sec/update: 4.0523370;lr: 0.0098384
+[train] u: 0000820; loss: 0.0723921; sec/update: 0.6169737;lr: 0.0098364
+[train] u: 0000830; loss: 0.0790422; sec/update: 0.7278033;lr: 0.0098344
+[train] u: 0000840; loss: 0.1301429; sec/update: 0.6272938;lr: 0.0098324
+[train] u: 0000850; loss: 0.0778041; sec/update: 0.5573927;lr: 0.0098304
+[validation] u: 0000850; loss: 0.0724564; bacc: -11076.9072
+[train] u: 0000860; loss: 0.0707019; sec/update: 4.0835938;lr: 0.0098284
+[train] u: 0000870; loss: 0.0797089; sec/update: 0.3970350;lr: 0.0098264
+[train] u: 0000880; loss: 0.0541747; sec/update: 0.4632167;lr: 0.0098244
+[train] u: 0000890; loss: 0.0982061; sec/update: 0.6200833;lr: 0.0098224
+[train] u: 0000900; loss: 0.0963766; sec/update: 0.7033312;lr: 0.0098204
+[validation] u: 0000900; loss: 0.0691309; bacc: -11353.0996
+[train] u: 0000910; loss: 0.1212237; sec/update: 4.4082556;lr: 0.0098184
+[train] u: 0000920; loss: 0.0611489; sec/update: 0.5508679;lr: 0.0098164
+[train] u: 0000930; loss: 0.0477837; sec/update: 0.4849644;lr: 0.0098144
+[train] u: 0000940; loss: 0.0566780; sec/update: 0.8334548;lr: 0.0098124
+[train] u: 0000950; loss: 0.0565640; sec/update: 1.1223611;lr: 0.0098104
+[validation] u: 0000950; loss: 0.0710498; bacc: -11097.6406
+[train] u: 0000960; loss: 0.0981888; sec/update: 5.2635557;lr: 0.0098084
+[train] u: 0000970; loss: 0.0605705; sec/update: 1.0089985;lr: 0.0098064
+[train] u: 0000980; loss: 0.0347795; sec/update: 0.8293327;lr: 0.0098044
+[train] u: 0000990; loss: 0.0896021; sec/update: 0.4429543;lr: 0.0098024
+[train] u: 0001000; loss: 0.0564068; sec/update: 0.6567456;lr: 0.0098004
+[validation] u: 0001000; loss: 0.0699161; bacc: -11162.4199
+[train] u: 0001010; loss: 0.0622426; sec/update: 3.9861956;lr: 0.0097984
+[train] u: 0001020; loss: 0.0730232; sec/update: 0.3676624;lr: 0.0097964
+[train] u: 0001030; loss: 0.0757454; sec/update: 0.8647531;lr: 0.0097944
+[train] u: 0001040; loss: 0.0724594; sec/update: 0.4620108;lr: 0.0097924
+[train] u: 0001050; loss: 0.0429231; sec/update: 0.6028363;lr: 0.0097904
