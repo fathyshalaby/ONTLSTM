@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="shalaby@cobra.bioinf.jku.at:5792">
+  <component name="PublishConfigData" autoUpload="Always" serverName="shalaby@raptor.bioinf.jku.at:5792">
     <serverData>
-      <paths name="shalaby@cobra.bioinf.jku.at:5792">
+      <paths name="shalaby@cougar.bioinf.jku.at:5792">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/pycharm_project_615" local="$PROJECT_DIR$" />
+            <mapping deploy="/publicwork/shalaby/ONTLSTM" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="shalaby@hawk.bioinf.jku.at:5792 (7)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/pycharm_project_377" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="shalaby@hawk.bioinf.jku.at:5792 (9)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/publicwork/shalaby/ONTLSTM" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="shalaby@orca.bioinf.jku.at:5792">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/publicwork/shalaby/GENLSTM" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="shalaby@raptor.bioinf.jku.at:5792">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/publicwork/shalaby/ONLSTM2" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>

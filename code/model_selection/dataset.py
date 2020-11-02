@@ -11,12 +11,7 @@ from torch.utils.data import Dataset
 
 
 class TensorDataset(Dataset):
-    @property
-    def train_label(self):
-        return self.labels
 
-    def test_label(self):
-        return self.labels
     def __init__(self, annotation, sequences,gid,ggid):
         self.ANNOTATION = list(annotation.keys())
         self.SEQUENCE = sequences
@@ -27,7 +22,8 @@ class TensorDataset(Dataset):
         self.goid_to_index = gid['go_id_to_index'][:]
         self.vocab = 'MAFSEDVLKYRPNWQCGIHTXZBUO'
         self.aa_lookup = dict([(k, v) for v, k in enumerate(self.vocab)])
-        self.allowed_goids = np.array(list(ggid.values()))>0
+        self.ggid=np.array(list(ggid.values()))
+        self.allowed_goids = np.array(list(ggid.keys()))==6357
         self.n_allowed_goids = self.allowed_goids.sum()
         self.n_features = 25
         self.n_classes = self.n_allowed_goids

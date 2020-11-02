@@ -53,12 +53,7 @@ print("is_a relations of go_id {}: {}".format(go_ids[0], np.asarray(one_hot_dag[
 print("Average number of is_a relations per go_id {}".format(np.mean(one_hot_dag.sum(axis=1))))
 
 
-#########Uniprot####
-uni = uniprotparser.uni8go
-p = OrderedDict(uni)
-with open('uni2go.pkl', 'wb') as f:
-    # Pickle will store our object into the specified file
-    hickle.dump(p, f)
+
 
 
 

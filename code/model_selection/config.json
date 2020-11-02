@@ -1,14 +1,1 @@
-{
-  "device": "cpu",
-  "num_threads": 4,
-  "lr": 1e-1,
-  "batch_size": 64,
-  "n_lstm": 4,
-  "n_updates": 5e3,
-  "results_dir": "results",
-  "print_stats_at": 1e2,
-  "plot_at": 1e3,
-  "validate_at": 5e2,
-  "n_samples": 1e5,
-  "rnd_seed": 123
-}
+{"device": "cpu", "num_threads": 1, "lr": 0.01, "batch_size": 32, "n_lstm": 8, "n_updates": 40000.0, "results_dir": "results_1", "print_stats_at": 100.0, "plot_at": 1000.0, "validate_at": 500.0, "n_samples": 100000.0, "rnd_seed": 42, "opt": "adam"}

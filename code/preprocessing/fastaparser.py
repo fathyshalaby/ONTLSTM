@@ -5,6 +5,7 @@ import numpy as np
 import Bio.SeqIO as SeqIO
 forbidden = ['B', 'O', 'J', 'U', 'X', 'Z']
 def sequence(inputfile):
+    maxi = 0
     finaldic = dict()
     p = OrderedDict(uniprotparser.go_dict)
     for record in SeqIO.parse(inputfile, "fasta"):
@@ -12,20 +13,18 @@ def sequence(inputfile):
         if record.id.split('|')[1] in p.keys():
             if not any([x in record.seq for x in forbidden]):
                 finaldic[record.id.split('|')[1]] = record.seq
+                if len(record.seq)>maxi:
+                    maxi = len(record.seq)
+
             else:
                 pass
+    print('maxi',maxi)
     return finaldic
 m = sequence('../../data/human_swissprot_sequences.fasta')
 z = OrderedDict(m)
-p = max(z.values())
 with open('fullsequence_swiss_human.pkl', 'wb') as f:
     pickle.dump(m, f)
     print('done')
-    print(z)
-print(sequence('../../data/human_swissprot_sequences.fasta'))
-
-
-
 '''
 def sequence(inputfile):
     c = gzip.decompress(inputfile)

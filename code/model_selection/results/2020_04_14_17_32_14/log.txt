@@ -1,0 +1,1 @@
+# settings: ObjectDict([('device', 'cpu'), ('num_threads', 4), ('lr', 0.1), ('batch_size', 256), ('n_lstm', 8), ('n_updates', 10000000.0), ('results_dir', 'results'), ('print_stats_at', 100.0), ('plot_at', 1000.0), ('validate_at', 500.0), ('n_samples', 100000.0), ('rnd_seed', 42)])

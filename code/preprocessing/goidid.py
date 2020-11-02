@@ -9,7 +9,7 @@ with open('fullsequence_swiss_human.pkl','rb') as f:
 with open('uni2go_human.pkl','rb') as i:
     dat2 = pickle.load(i)
 print(len(data1.keys()))
-u = goparser.parseobofile('../../data/go-basic.obo')
+u,v = goparser.parseobofile('../../data/go-basic.obo')
 k = []
 an = OrderedDict()
 print('extend')
@@ -18,25 +18,30 @@ for keys in tqdm(data1.keys()):
 print()
 print('counting')
 print()
-for goid in tqdm(u[0].keys()):
+for goid in tqdm(u.keys()):
     if goid in an.keys():
         pass
     elif k.count(goid):
         an[goid] = k.count(goid)
-
-with open('goid.pkl', 'wb') as f:
+    else:
+        an[goid] = 0
+print(len(an.keys()))
+with open('goid_human.pkl', 'wb') as f:
     pickle.dump(an, f)
     print('done')
 print(len(an.keys()))
 plt.plot(list(an.keys()),list(an.values()))
 print(np.max(list(an.values())))
 plt.show()
+
+
+
 from collections import Counter
 print(Counter(list(an.values())))
 print(an)#on average we need 43 samples for each go id that is valid
 print('creating a balanced dataset')
-minimum_samples = 1000
-maximum_samples = 1000
+minimum_samples = 200
+maximum_samples = 200
 relationship_as_is = goparser.rel
 balanceddataset ={}
 goid_seq={}
@@ -57,19 +62,19 @@ for goids in tqdm(goid_seq.keys()):
         print('inrange',goids)
         balanceddataset[goids] = goid_seq[goids]
     else:
-        while len(goid_seq[goids]) > maximum_samples: #if the goid has a higher amount than the minimum_samples we get rid of the extra sequences which are also found in other goids/relatives(look at the relationship which is done in the goparser script
+        while len(goid_seq[goids]) > maximum_samples: #if the goid has a higher amount than the minimum_samples we get rid of the extra sequences which are also found in other goids/relatives(look at the relationship which is done in the goparser script)
             if goids in relationship_as_is.keys():
-                for sequenceo in goid_seq[goids][50:]:
+                for sequenceo in goid_seq[goids][200:]:
                     for relat in relationship_as_is[goids]:
                         if relat in goid_seq.keys():
                             print('adding',relat,sequenceo)
                             goid_seq[relat].append(sequenceo)
                 print(len(goid_seq[goids]))
-                goid_seq[goids]=goid_seq[goids][:50]
+                goid_seq[goids]=goid_seq[goids][:200]
             else:
                 print(len(goid_seq[goids]))
-                goid_seq[goids] = goid_seq[goids][:50]
-                print('you have been 50it', '|iteration',copo,'from',len(goid_seq.keys()))
+                goid_seq[goids] = goid_seq[goids][:200]
+                print('you have been 200it', '|iteration',copo,'from',len(goid_seq.keys()))
 
         while len(goid_seq[goids])<minimum_samples:
             print('copying last sequence',len(goid_seq[goids]))
@@ -79,9 +84,9 @@ from matplotlib import pyplot as plt
 print('creating plot')
 print(len(balanceddataset.keys()))
 seqnum = {}
-for key in tqdm(u[0].keys()):
+for key in tqdm(u.keys()):
     if key in balanceddataset.keys():
-        balanceddataset[key]=balanceddataset[key][:50]
+        balanceddataset[key]=balanceddataset[key][:200]
         seqnum[key]= len(balanceddataset[key])
     else:
         seqnum[key]=0
@@ -91,16 +96,16 @@ plt.plot(list(seqnum.keys()),list(seqnum.values()))
 plt.show()
 
 
-with open('fullsequence_.pkl', 'wb') as f:#{goid:sequences}
+with open('fullsequence_balanced.pkl', 'wb') as f:#{goid:sequences}
     pickle.dump(balanceddataset, f)
     print('done')
-with open('goid_.pkl', 'wb') as f:
+with open('goid_balanced.pkl', 'wb') as f:
     pickle.dump(seqnum, f)
     print('done')
 
 newuni2go = {}
 seq_uni={v: k for k, v in data1.items()}
-print(list(seq_uni.values())[0])
+print(seq_uni)
 for keys in tqdm(balanceddataset.keys(),desc='goids'):#all goids:seq(many)[]
     for val in balanceddataset[keys]:
         if seq_uni[val] in newuni2go.keys():
@@ -110,7 +115,7 @@ for keys in tqdm(balanceddataset.keys(),desc='goids'):#all goids:seq(many)[]
 
 print(list(OrderedDict(newuni2go).values())[1])
 m = OrderedDict(newuni2go)
-with open('uni2go_.pkl', 'wb') as f:
+with open('uni2go_balanced.pkl', 'wb') as f:
     pickle.dump(m, f)
     print('done')
 

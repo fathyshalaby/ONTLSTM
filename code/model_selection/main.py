@@ -29,7 +29,6 @@ import matplotlib
 matplotlib.use('Agg')
 import numpy as np
 import torch
-from torchsampler import ImbalancedDatasetSampler
 import torch.nn as nn
 import torch.optim as optim
 from widis_lstm_tools.nn import LSTMLayer, LearningRateDecay
@@ -39,14 +38,14 @@ from dataset import TensorDataset
 from widis_lstm_tools.measures import bacc
 from widis_lstm_tools.utils.collection import TeePrint, SaverLoader, close_all
 from sklearn.metrics import roc_auc_score as rocac
-from sklearn.metrics import plot_confusion_matrix
-from sklearn.metrics import confusion_matrix as cfm
-from sklearn.metrics import hamming_loss,f1_score
+import warnings
+from collections import Counter
+warnings.filterwarnings("ignore")
 
 
 import pickle
 import h5py
-with open('../preprocessing/fullsequence_swiss_human.pkl', 'rb') as f:
+with open('../../preprocessing/fullsequence_swiss_human.pkl', 'rb') as f:
     fulldata = pickle.load(f)
     count = 0
     seqdic = {}
@@ -57,19 +56,19 @@ with open('../preprocessing/fullsequence_swiss_human.pkl', 'rb') as f:
             seqdic[key] = fulldata[key]
             count+=1
 full_sequences = fulldata
-with open('../preprocessing/uni2go_.pkl', 'rb') as f:
+with open('../../preprocessing/uni2go_human.pkl', 'rb') as f:
     # Pickle will store our object into the specified file
     uni_data = pickle.load(f)
-with open('../preprocessing/goid_.pkl', 'rb') as f:
+with open('../../preprocessing/goid_human.pkl', 'rb') as f:
     # Pickle will store our object into the specified file
     ggid = pickle.load(f)
-gid = h5py.File('../preprocessing/one_hot_go.h5py','r')
+gid = h5py.File('../../preprocessing/one_hot_go.h5py','r')
 validauc = []
 testauc = []
 validbacc = []
 testbacc = []
 class Net(nn.Module):
-    def __init__(self, n_input_features, n_lstm, n_outputs):
+    def __init__(self, n_input_features, n_lstm, n_outputs,kernel_size, use_cnn, use_prefinal_layer):
         super(Net, self).__init__()
         # Let's say we want an LSTM with forward connections to cell input and recurrent connections to input- and
         # output gate only; Furthermore we want a linear LSTM output activation instead of tanh:
@@ -106,19 +105,26 @@ class Net(nn.Module):
         # )
         
         # After the LSTM layer, we add a fully connected output layer
+        self.use_cnn = use_cnn
+        self.use_prefinal_layer = use_prefinal_layer
+        self.pre_fc_out = nn.Linear(n_lstm, n_lstm)
         self.fc_out = nn.Linear(n_lstm, n_outputs)
-        self.fc_out.bias.data[:] = -1
+        self.cnn = nn.Conv1d(kernel_size=kernel_size,in_channels=n_input_features,out_channels=64)
+
+        #self.fc_out.bias.data[:] = -1
 
     def forward(self, x, true_seq_lens):
         # We only need the output of the LSTM; We get format (samples, n_lstm) since we set return_all_seq_pos=False:
+        if self.use_cnn==True:
+            x = self.cnn(x)
         lstm_out, *_ = self.lstm1.forward(x,
                                           true_seq_lens=true_seq_lens,  # true sequence lengths of padded sequences
                                           return_all_seq_pos=False  # return predictions for last sequence position
                                           )
+        if self.use_prefinal_layer==True:
+            lstm_out = self.pre_fc_out(lstm_out)
         net_out = self.fc_out(lstm_out)
         return net_out
-
-
 def main():
     # Read config file path and set up results folder
     config, resdir = get_config()
@@ -140,7 +146,7 @@ def main():
 
 
 
-    training_set, validation_set, test_set = random_dataset_split(dataset=full_dataset, split_sizes=(.8, .1, .1),
+    training_set, validation_set, test_set = random_dataset_split(dataset=full_dataset, split_sizes=(.6, .2, .2),
                                                                  rnd_seed=config['rnd_seed'])
     n_class = torch.Tensor([i for i in range(full_dataset.n_allowed_goids)])
     # Set up sequence padding
@@ -170,18 +176,29 @@ def main():
     testdindices= np.logical_and(testdindices>0,traindindices<n_test_samples)
     validdindices = torch.stack(validationlabels,dim=0).detach().cpu().numpy().sum(axis=0)
     validdindices= np.logical_and(validdindices>0,traindindices<n_validation_samples)
-    finalindices = torch.Tensor(np.asarray(testdindices*validdindices*traindindices, dtype=np.uint8)).to(dtype=torch.uint8)
+    finalindices = torch.Tensor(np.asarray(testdindices*validdindices*traindindices, dtype=np.bool)).to(dtype=torch.bool)
 
 
     # Create Network
-    net = Net(n_input_features=full_dataset.n_features, n_lstm=config['n_lstm'], n_outputs=full_dataset.n_classes)
+    net = Net(n_input_features=full_dataset.n_features, n_lstm=config['n_lstm'], n_outputs=full_dataset.n_classes,kernel_size=config["kernel_size"],use_cnn=config["use_cnn"],use_prefinal_layer=config["use_prefinal_layer"])
     net.to(device)
 
     # Get some loss functions
+    #
+    occur=[]
+    for i in range(len(finalindices)):
+        if finalindices[i]==1:
+            occur.append(list(ggid.values())[i])
+    print(Counter(occur))
+
     mean_cross_entropy = nn.BCEWithLogitsLoss()
+
+    optimizer= torch.optim.Adam(net.parameters(),lr=config['lr'],weight_decay=config['L2'])
     
     # Get some optimizer
-    optimizer = optim.Adam(net.parameters(), lr=config['lr'], weight_decay=1e-5)
+
+    if config["opt"]=='sgd':
+         optimizer = torch.optim.SGD(net.parameters(), lr=config['lr'], weight_decay=config['L2'])
     
     # Get a linear learning rate decay
     lr_decay = LearningRateDecay(max_n_updates=config['n_updates'], optimizer=optimizer, original_lr=config['lr'])
@@ -254,7 +271,7 @@ def main():
                     if x  >.4:
                         print(x)
                 raise b
-            print(aucscores)
+            print('aucs',aucscores)
 
 
 
@@ -263,7 +280,7 @@ def main():
     # Get current state for some Python variables
     update, best_validation_loss, validation_bacc = (state['update'], state['best_validation_loss'],
                                                      state['validation_bacc'])
-    
+
     # Save initial model as first model
     saver_loader.save_to_ram(savename=str(update))
     
@@ -292,7 +309,12 @@ def main():
             outputs = net(padded_sequences, seq_lens)[:,finalindices]
             
             # Calculate loss, do backward pass, and update
-            loss = mean_cross_entropy(outputs, labels)
+            if config['classification']=='binary':
+                loss = mean_cross_entropy(outputs, labels)
+            else:
+                # loss = loss_main+(0.5*sum(loss_auxillary_classes/n_auxillary_classes)
+                loss_main = mean_cross_entropy(outputs, labels)
+                loss = loss_main+(0.5*sum(mean_cross_entropy(outputs,labels)/5))
             loss.backward()
             optimizer.step()
             update += 1
@@ -304,17 +326,17 @@ def main():
             if update % config['print_stats_at'] == 0 and update > 0:
                 run_time = (time.time() - start_time) / config['print_stats_at']
                 running_loss /= config['print_stats_at']
-                tprint(f"[train] u: {update:07d}; loss: {running_loss:8.7f}; "
-                       f"sec/update: {run_time:8.7f};lr: {lr:8.7f}")
+                train_baccs, train_loss, train_aucs, train_cf = calc_score(
+                    scoring_dataloader=training_set_loader,
+                    scoring_dataset=training_set)
+                tprint(f"[train] u: {update:07d}; loss: {train_loss:8.7f}; baccs: {train_baccs}; train_aucs:{train_aucs};"f" bacc: {np.mean(train_baccs):5.4f}; average_auc:{np.mean(train_aucs):5.4f}")
                 running_loss = 0.
                 start_time = time.time()
-                calc_score()
-            
+
             # Do some plotting using the LSTMLayer plotting function
             if update % config['plot_at'] == 0:
                 # This will plot the LSTM internals for sample 0 in minibatch
                 mb_index = 0
-                pred = (outputs[mb_index, 1] > outputs[mb_index, 0]).float().cpu().item()
                 net.lstm1.plot_internals(
                     filename=os.path.join(resdir, 'lstm_plots',
                                           f'u{update:07d}_id{sample_id[0]}.png'),
@@ -361,12 +383,12 @@ def main():
                                                      state['validation_bacc'])
     
     # Save model to file
-    saver_loader.save_to_file(filename='best.tar.gzip')
+    saver_loader.save_to_file(filename='best'+str(resdir)+'.tar.gzip')
     
     # Calculate scores and loss on test set
     print("  Calculating testset score...", end='')
     test_start_time = time.time()
-    test_baccs, test_loss, test_aucs = calc_score(scoring_dataloader=test_set_loader, scoring_dataset=test_set)
+    test_baccs, test_loss, test_aucs,test_cf = calc_score(scoring_dataloader=test_set_loader, scoring_dataset=test_set)
     print(f" ...done! ({time.time()-test_start_time})")
 
     
@@ -375,6 +397,8 @@ def main():
            f" bacc: {np.mean(test_baccs):5.4f}; test_auc:{np.mean(test_aucs):5.4f}")
     testauc.append(test_aucs)
     testbacc.append(test_baccs)
+    with open('results.txt','a') as f:
+        f.write(str(resdir)+': '+str(np.mean(test_aucs)))
     print('Done!')
 
 
