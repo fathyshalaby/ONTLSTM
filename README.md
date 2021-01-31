@@ -1,2 +1,2 @@
 # ONTLSTM
-A copy of GENTLSTM for expirementation purposes
+The code base for my Bachelor Thesis
