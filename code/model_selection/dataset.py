@@ -20,12 +20,12 @@ class TensorDataset(Dataset):
         self.goid = gid
         self.gomatrix = gid['one_hot_dag'][:]
         self.goid_to_index = gid['go_id_to_index'][:]
-        self.vocab = 'MAFSEDVLKYRPNWQCGIHTXZBUO'
+        self.vocab = 'MAFSEDVLKYRPNWQCGIHT'
         self.aa_lookup = dict([(k, v) for v, k in enumerate(self.vocab)])
         self.ggid=np.array(list(ggid.values()))
-        self.allowed_goids = np.array(list(ggid.keys()))==6357
+        self.allowed_goids = np.isin(list(ggid.keys()),[45944])
         self.n_allowed_goids = self.allowed_goids.sum()
-        self.n_features = 25
+        self.n_features = len(self.vocab)
         self.n_classes = self.n_allowed_goids
 
     def __len__(self):
