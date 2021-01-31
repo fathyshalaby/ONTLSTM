@@ -1,9 +1,0 @@
-# settings: ObjectDict([('device', 'cpu'), ('num_threads', 4), ('lr', 0.01), ('batch_size', 128), ('n_lstm', 4), ('n_updates', 1000.0), ('results_dir', 'results'), ('print_stats_at', 10.0), ('plot_at', 100.0), ('validate_at', 50.0), ('n_samples', 100000.0), ('rnd_seed', 42)])
-[train] u: 0000010; loss: 4.5366367; sec/update: 1.9556645;lr: 0.0099101
-[train] u: 0000020; loss: 0.7040727; sec/update: 1.7359176;lr: 0.0098102
-[train] u: 0000030; loss: 0.7308002; sec/update: 1.5555500;lr: 0.0097103
-[train] u: 0000040; loss: 0.6454719; sec/update: 1.3630997;lr: 0.0096104
-[train] u: 0000050; loss: 0.4559441; sec/update: 1.6734369;lr: 0.0095105
-[validation] u: 0000050; loss: 0.3949301; baccs: [0.6576549  0.5        0.41354293 ... 0.5        0.40496367 0.5       ]; validation_aucs:[0.7709599  0.40266022 0.36819831 ... 0.54933009 0.58434221 0.44632768]; bacc: 0.5017; validation_auc:0.4944
-  New best validation loss: 0.3949301242828369
-[train] u: 0000060; loss: 0.3153648; sec/update: 2.3011663;lr: 0.0094106

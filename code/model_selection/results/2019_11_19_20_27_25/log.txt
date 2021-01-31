@@ -1,3 +1,0 @@
-# settings: ObjectDict([('device', 'cpu'), ('num_threads', 4), ('lr', 0.001), ('batch_size', 64), ('n_lstm', 16), ('n_updates', 5000.0), ('results_dir', 'results'), ('print_stats_at', 100.0), ('plot_at', 1000.0), ('validate_at', 1), ('n_samples', 100000.0), ('rnd_seed', 123)])
-[validation] u: 0000001; loss: 7.6860428; baccs: [0.48449612 0.47020483 0.5547159  ... 0.49906832 0.53726727 0.29453754]; validation_aucs:[0.26976744 0.49984482 0.66963714 ... 0.63167702 0.57482817 0.45460894]; bacc: 0.5089; validation_auc:0.4954
-  New best validation loss: 7.686042785644531
